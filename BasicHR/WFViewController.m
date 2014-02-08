@@ -121,8 +121,8 @@
             isValid=YES;
             
             self.serialLabel.text = hrConnection.deviceIDString;
-            self.hrLabel.text = [[hrConnection getHeartrateData] formattedHeartrate:YES];
-            NSLog(@"%@", [[hrConnection getHeartrateData] formattedHeartrate:YES]);
+            self.hrLabel.text = [[hrConnection getHeartrateData] formattedHeartrate:NO];
+            NSLog(@"%@", [[hrConnection getHeartrateData] formattedHeartrate:NO]);
             
             if (!self.hrLabel.text) {
                 self.hrLabel.text = @"0";

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F85779018A6C1D400F4F7A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F85778F18A6C1D400F4F7A8 /* Images.xcassets */; };
+		9F8577A018A6CBF100F4F7A8 /* wahoo_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85779D18A6CBF100F4F7A8 /* wahoo_58.png */; };
+		9F8577A118A6CBF100F4F7A8 /* wahoo_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85779E18A6CBF100F4F7A8 /* wahoo_80.png */; };
+		9F8577A218A6CBF100F4F7A8 /* wahoo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F85779F18A6CBF100F4F7A8 /* wahoo_120.png */; };
+		9F8577A418A6CD2900F4F7A8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8577A318A6CD2900F4F7A8 /* heart.png */; };
 		C82D649518A5F8ED00AB4FCA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D647B18A5F8ED00AB4FCA /* AFHTTPRequestOperation.m */; };
 		C82D649618A5F8ED00AB4FCA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D647D18A5F8ED00AB4FCA /* AFHTTPRequestOperationManager.m */; };
 		C82D649718A5F8ED00AB4FCA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D647F18A5F8ED00AB4FCA /* AFHTTPSessionManager.m */; };
@@ -40,6 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F85778F18A6C1D400F4F7A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9F85779D18A6CBF100F4F7A8 /* wahoo_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wahoo_58.png; sourceTree = "<group>"; };
+		9F85779E18A6CBF100F4F7A8 /* wahoo_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wahoo_80.png; sourceTree = "<group>"; };
+		9F85779F18A6CBF100F4F7A8 /* wahoo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wahoo_120.png; sourceTree = "<group>"; };
+		9F8577A318A6CD2900F4F7A8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		C82D647A18A5F8ED00AB4FCA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		C82D647B18A5F8ED00AB4FCA /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		C82D647C18A5F8ED00AB4FCA /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -160,6 +170,10 @@
 			isa = PBXGroup;
 			children = (
 				EC4465F2179E4D8700B6DEA7 /* Default-568h@2x.png */,
+				9F85779D18A6CBF100F4F7A8 /* wahoo_58.png */,
+				9F85779E18A6CBF100F4F7A8 /* wahoo_80.png */,
+				9F85779F18A6CBF100F4F7A8 /* wahoo_120.png */,
+				9F8577A318A6CD2900F4F7A8 /* heart.png */,
 				EC741C6D163A7A90008D3114 /* BasicHR */,
 				EC741C66163A7A90008D3114 /* Frameworks */,
 				EC741C64163A7A90008D3114 /* Products */,
@@ -202,6 +216,7 @@
 				EC741C79163A7A90008D3114 /* MainStoryboard.storyboard */,
 				EC741C7C163A7A90008D3114 /* WFViewController.h */,
 				EC741C7D163A7A90008D3114 /* WFViewController.m */,
+				9F85778F18A6C1D400F4F7A8 /* Images.xcassets */,
 				EC741C6E163A7A90008D3114 /* Supporting Files */,
 			);
 			path = BasicHR;
@@ -275,9 +290,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8577A418A6CD2900F4F7A8 /* heart.png in Resources */,
+				9F8577A018A6CBF100F4F7A8 /* wahoo_58.png in Resources */,
 				EC741C72163A7A90008D3114 /* InfoPlist.strings in Resources */,
+				9F8577A118A6CBF100F4F7A8 /* wahoo_80.png in Resources */,
+				9F85779018A6C1D400F4F7A8 /* Images.xcassets in Resources */,
 				EC741C7B163A7A90008D3114 /* MainStoryboard.storyboard in Resources */,
 				EC4465F3179E4D8700B6DEA7 /* Default-568h@2x.png in Resources */,
+				9F8577A218A6CBF100F4F7A8 /* wahoo_120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +418,8 @@
 		EC741C82163A7A90008D3114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -425,6 +447,8 @@
 		EC741C83163A7A90008D3114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
