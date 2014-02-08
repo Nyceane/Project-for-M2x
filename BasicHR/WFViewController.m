@@ -17,7 +17,9 @@
 
 @end
 
-@implementation WFViewController
+@implementation WFViewController {
+    int heartrate;
+}
 
 @synthesize antPlusSwitch;
 @synthesize bluetoothSwitch;
@@ -30,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    heartrate = 100;
 	// Do any additional setup after loading the view, typically from a nib.
     
     
@@ -129,48 +132,8 @@
             }
             
           
-            NSDictionary *newValue = @{ @"values": @[ @{ @"value": self.hrLabel.text} ] };
+            [self connectToATTM2X:self.hrLabel.text];
             
-            FeedsClient *feedClient = [[FeedsClient alloc] init];
-            [feedClient setFeed_key:@"6c30d3f9fae23db1209e32d9de2efa1b"];
-            
-            [feedClient postDataValues:newValue
-                             forStream:@"heartrate"
-                                inFeed:@"bce9ce2cd1e121eacf6fb260dc9fe055"
-                               success:^(id object) { /*success block*/ }
-                               failure:^(NSError *error, NSDictionary *message)
-            {
-                NSLog(@"Error: %@",[error localizedDescription]);
-                NSLog(@"Message: %@",message);
-            }];
-            
-            /*
-
-            NSDictionary *newValue = [NSDictionary init];
-            
-  
-                                @{ @"values": @[ @{ @"value":
-                                                             self.hrLabel.text
-                                        } ] };
-
-            FeedsClient *feedClient = [[FeedsClient alloc] init];
-            [feedClient setFeed_key:@"6c30d3f9fae23db1209e32d9de2efa1b"];
-            
-            [feedClient postDataValues:newValue
-                             forStream:@"heartrate"
-                                inFeed:@"bce9ce2cd1e121eacf6fb260dc9fe055"
-                               success:^(id object) { }
-                               failure:^(NSError *error, NSDictionary *message)
-             {
-                 NSLog(@"Error: %@",[error localizedDescription]);
-                 NSLog(@"Message: %@",message);
-             }];
-            */
-            //if([[hrConnection getHeartrateData] < 40)
-            //{
-//            https://rest.nexmo.com/sms/json?api_key=a2090ef7&api_secret=7d8c7878&from=15747422587&to=[]&text=Josh's+heart+rate+just+dropped+below+40[]
-            //    NSURL
-            //}
         }
     }
 
@@ -179,12 +142,44 @@
         self.serialLabel.text = @"--";
         self.hrLabel.text = @"--";
     }
-    
+}
 
+- (void)connectToATTM2X:(NSString *)hearrateValue {
+    NSDictionary *newValue = @{ @"values": @[ @{ @"value":hearrateValue } ] };
+    
+    FeedsClient *feedClient = [[FeedsClient alloc] init];
+    [feedClient setFeed_key:@"6c30d3f9fae23db1209e32d9de2efa1b"];
+    
+    [feedClient postDataValues:newValue
+                     forStream:@"heartrate"
+                        inFeed:@"bce9ce2cd1e121eacf6fb260dc9fe055"
+                       success:^(id object) { /*success block*/ }
+                       failure:^(NSError *error, NSDictionary *message)
+     {
+         NSLog(@"Error: %@",[error localizedDescription]);
+         NSLog(@"Message: %@",message);
+     }];
+}
+
+- (void)countLabel:(NSTimer*) timer {
+    
+    heartrate--;
+    
+    [self connectToATTM2X:[NSString stringWithFormat:@"%d", heartrate]];
+    self.hrLabel.text = [NSString stringWithFormat:@"%d", heartrate];
+
+    
+    if (heartrate < 40) {
+        [timer invalidate];
+        timer = nil;
+    }
     
 }
 
 - (IBAction)messageButtonSend:(id)sender {
+    
+    NSTimer *timer1 = [NSTimer scheduledTimerWithTimeInterval: 0.1 target:self selector:@selector(countLabel:) userInfo:nil repeats: YES];
+    
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:@"https://rest.nexmo.com/sms/json?api_key=b2897742&api_secret=595daa8c&from=15708460233&to=13233606032&text=hello+I+am+Robert"]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
