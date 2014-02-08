@@ -172,12 +172,16 @@
     if (heartrate < 40) {
         [timer invalidate];
         timer = nil;
+        NSString *phoneNumber = [@"tel://" stringByAppendingString:@"13233606032"];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
     
 }
 
 - (IBAction)messageButtonSend:(id)sender {
     
+    heartrate = 100;
+ 
     NSTimer *timer1 = [NSTimer scheduledTimerWithTimeInterval: 0.1 target:self selector:@selector(countLabel:) userInfo:nil repeats: YES];
     
     
