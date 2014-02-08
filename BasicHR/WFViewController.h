@@ -20,7 +20,9 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *hrLabel;
 @property (weak, nonatomic) IBOutlet UILabel *serialLabel;
+@property (weak, nonatomic) IBOutlet UIButton *messageButton;
 
 - (IBAction)connectButtonTouched:(id)sender;
+- (IBAction)messageButtonSend:(id)sender;
 
 @end

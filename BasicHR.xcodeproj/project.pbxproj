@@ -247,6 +247,11 @@
 				CLASSPREFIX = WF;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Wahoo Fitness";
+				TargetAttributes = {
+					EC741C62163A7A90008D3114 = {
+						DevelopmentTeam = H9Q8Z79B32;
+					};
+				};
 			};
 			buildConfigurationList = EC741C5D163A7A8F008D3114 /* Build configuration list for PBXProject "BasicHR" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -393,6 +398,8 @@
 		EC741C82163A7A90008D3114 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../dependencies\"",
@@ -410,6 +417,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -417,6 +425,8 @@
 		EC741C83163A7A90008D3114 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../dependencies\"",
@@ -434,6 +444,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
