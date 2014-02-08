@@ -120,10 +120,16 @@
             isValid=YES;
             self.serialLabel.text = hrConnection.deviceIDString;
             self.hrLabel.text = [[hrConnection getHeartrateData] formattedHeartrate:NO];
+            NSLog(@"%@", [[hrConnection getHeartrateData] formattedHeartrate:NO]);
             
+/*
+            NSDictionary *newValue = [NSDictionary init];
             
-            NSDictionary *newValue = @{ @"values": @[ @{ @"value": [[hrConnection getHeartrateData] formattedHeartrate:NO] } ] };
-            
+  
+                                @{ @"values": @[ @{ @"value":
+                                                             self.hrLabel.text
+                                        } ] };
+            */
             FeedsClient *feedClient = [[FeedsClient alloc] init];
             [feedClient setFeed_key:@"6c30d3f9fae23db1209e32d9de2efa1b"];
             
@@ -136,6 +142,12 @@
                  NSLog(@"Error: %@",[error localizedDescription]);
                  NSLog(@"Message: %@",message);
              }];
+            
+            //if([[hrConnection getHeartrateData] < 40)
+            //{
+//            https://rest.nexmo.com/sms/json?api_key=a2090ef7&api_secret=7d8c7878&from=15747422587&to=[19178418611]&text=Josh's+heart+rate+just+dropped+below+40[]
+            //    NSURL
+            //}
         }
     }
 
