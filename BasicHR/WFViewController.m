@@ -172,7 +172,7 @@
     if (heartrate < 40) {
         [timer invalidate];
         timer = nil;
-        NSString *phoneNumber = [@"tel://" stringByAppendingString:@"13233606032"];
+        NSString *phoneNumber = [@"tel://" stringByAppendingString:@"14088384237"];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     }
     
@@ -185,7 +185,7 @@
     NSTimer *timer1 = [NSTimer scheduledTimerWithTimeInterval: 0.1 target:self selector:@selector(countLabel:) userInfo:nil repeats: YES];
     
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:@"https://rest.nexmo.com/sms/json?api_key=b2897742&api_secret=595daa8c&from=15708460233&to=13233606032&text=hello+I+am+Robert"]
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:@"https://rest.nexmo.com/sms/json?api_key=b2897742&api_secret=595daa8c&from=15708460233&to=14088362915&text=hello+I+am+your+Grandma+Hellen+I+need+help+in+nestGSV+campus"]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                        timeoutInterval:10];
     
